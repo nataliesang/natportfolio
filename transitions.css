@@ -1,0 +1,49 @@
+.page-section {
+  position: relative;
+  scroll-margin-top: 24px;
+}
+
+.page-section::before {
+  display: none;
+}
+
+.page-section.in-view::before {
+  display: none;
+}
+
+.hero.page-section::before,
+.contact.page-section::before {
+  display: none;
+}
+
+.page-section .eyebrow,
+.page-section h2,
+.page-section .project-grid,
+.page-section .about-layout,
+.page-section .credentials,
+.page-section .contact-inner {
+  transition: transform .75s cubic-bezier(.2,.8,.2,1), opacity .6s ease;
+}
+
+.page-section:not(.in-view):not(.hero) .eyebrow,
+.page-section:not(.in-view):not(.hero) h2,
+.page-section:not(.in-view):not(.hero) .project-grid,
+.page-section:not(.in-view):not(.hero) .about-layout,
+.page-section:not(.in-view):not(.hero) .credentials,
+.page-section:not(.in-view):not(.hero) .contact-inner {
+  opacity: .68;
+  transform: translateY(32px);
+}
+
+.page-section.in-view .project-grid { transition-delay: .08s; }
+.page-section.in-view .credentials { transition-delay: .13s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-section::before,
+  .page-section .eyebrow,
+  .page-section h2,
+  .page-section .project-grid,
+  .page-section .about-layout,
+  .page-section .credentials,
+  .page-section .contact-inner { transition: none; }
+}

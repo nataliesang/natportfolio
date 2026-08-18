@@ -1,0 +1,40 @@
+/* White background with the three portfolio accent colours. */
+:root {
+  --paper: #141613;
+  --cream: #141613;
+  --ink: #f7f5ef;
+  --yellow: #efd27e;
+  --coral: #ed6045;
+  --violet: var(--yellow); /* replaces purple */
+  --green: #34453d; /* replaces light green */
+  --line: rgba(247, 245, 239, .24);
+}
+
+body {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 13% 18%, rgba(239, 210, 126, .12), transparent 23rem),
+    radial-gradient(circle at 86% 48%, rgba(237, 96, 69, .08), transparent 27rem),
+    radial-gradient(circle at 48% 90%, rgba(52, 69, 61, .5), transparent 30rem);
+  background-attachment: fixed;
+}
+
+/* Replace older hard-coded purple and pink project colours. */
+.aurora { background: var(--yellow); color: #22211f; }
+.orbit-line { border-color: #22211f; }
+.bloom { background: var(--yellow); color: #22211f; }
+.bloom-flower { color: var(--coral); }
+.mono { background: var(--green); color: #ffffff; }
+.mono-disc { background: var(--yellow); }
+.pomelo { background: var(--yellow); color: #22211f; }
+.pomelo-sun { background: var(--coral); }
+.software { background: var(--green); color: #ffffff; }
+.experience { background: var(--yellow); color: #22211f; }
+.languages { color: #22211f; }
+.profile-card.experience i { border-color: #22211f; }
+
+/* Improve readability on the dark-green education card. */
+.education { color: #ffffff; }
+.education i { border-color: #ffffff; box-shadow: inset 0 0 0 26px var(--green), inset 0 0 0 27px #ffffff; }
+
+.contact { color: #22211f; }

@@ -1,0 +1,53 @@
+/* Readability and persistent navigation overrides. */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  background: var(--paper);
+  width: 100%;
+  padding: 0 32px;
+  border-bottom: 0;
+}
+
+/* Use the same handwritten Natalie Sang artwork as the favicon in the header. */
+.brand { display: grid; width: auto; height: 64px; place-items: center; color: #ffd84d; }
+.brand::after { display: none; }
+.brand-initials { font: 800 30px/1 Manrope, sans-serif; letter-spacing: .12em; }
+nav { margin-left: 0; }
+
+body,
+.hero-bottom p,
+.about-layout p,
+.contact-note {
+  font-size: 13pt;
+}
+
+.eyebrow,
+.nav,
+.filters button,
+.project-meta span,
+.art-caption,
+.bloom small,
+.mono-tag,
+.stamp,
+.credentials span,
+.text-link,
+.section-continue,
+footer {
+  font-size: 13pt;
+}
+
+.hero-orbit,
+.availability {
+  font-size: 13pt;
+}
+
+@media (max-width: 700px) {
+  .nav { padding: 0 18px; }
+  .brand { height: 54px; }
+  .brand-initials { font-size: 27px; }
+  .availability { font-size: 10pt; }
+  .hero-bottom p,
+  .about-layout p,
+  .contact-note { font-size: 13pt; }
+}
