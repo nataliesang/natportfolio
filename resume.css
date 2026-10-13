@@ -13,6 +13,19 @@
 .seo-role { display: inline-block; white-space: nowrap; margin-top: 5px; }
 .about-overview .eyebrow { margin-bottom: 15px; font-size: 10pt; color: var(--coral); }
 
+.about-hero-sketch {
+  position: absolute;
+  z-index: 1;
+  right: clamp(4%, 10vw, 13%);
+  bottom: 46px;
+  width: clamp(180px, 26vw, 360px);
+  height: auto;
+  max-height: 72%;
+  object-fit: contain;
+  filter: invert(1);
+  pointer-events: none;
+}
+
 .profile-details { padding: 120px 0 135px; }
 
 .profile-heading { display: grid; grid-template-columns: 1.25fr .75fr; gap: 42px; align-items: end; }
@@ -38,7 +51,7 @@
 .experience-meta { margin: 6px 0 10px; font: 10pt/1.35 'DM Mono', monospace; }
 .experience-list ul { max-width: 470px; margin: 0; padding-left: 18px; font-size: 13pt; line-height: 1.35; }
 .experience-list li + li { margin-top: 4px; }
-.experience i { right: -32px; bottom: -62px; width: 255px; height: 145px; border: 1px solid #27214c; border-radius: 50% 50% 0 0; transform: rotate(-24deg); }
+.experience i { display: none; }
 .languages { background: #efd27e; }
 .languages { min-height: 445px; }
 .language-bars { position: relative; z-index: 1; margin-top: 30px; }
@@ -62,6 +75,7 @@
 @media (max-width: 700px) {
   .hero { min-height: 680px; }
   .about-overview { max-width: 90%; margin-top: 46px; padding-left: 18px; }
+  .about-hero-sketch { right: 0; bottom: 18px; width: 150px; max-height: 42%; opacity: .92; }
   .profile-details { padding: 80px 0; }
   .profile-heading { grid-template-columns: 1fr; gap: 23px; }.profile-heading .eyebrow { grid-column: auto; }.profile-heading > p:last-child { margin: 0; }
   .profile-cards { grid-template-columns: 1fr; gap: 12px; margin-top: 40px; }.profile-card { min-height: 260px; padding: 25px; }.experience { min-height: 690px; }.languages { min-height: 440px; }.software { min-height: 450px; }

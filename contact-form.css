@@ -42,4 +42,57 @@
 
 .contact-form button:hover { background: transparent; color: var(--ink); transform: translateY(-2px); }
 .contact-form button span { margin-left: 12px; }
+.contact-direct-links { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.contact-direct-links a {
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  padding: 13px 20px;
+  font: 13pt Manrope, Arial, sans-serif;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.contact-direct-links a:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
+.contact-direct-links a span { margin-left: 12px; }
 .honeypot { display: none; }
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 760px;
+  margin: 38px auto 0;
+}
+
+.contact-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 116px;
+  padding: 24px 28px;
+  border: 1px solid var(--ink);
+  color: var(--paper);
+  background: var(--ink);
+  font: 500 clamp(18px, 2.2vw, 28px) Manrope, Arial, sans-serif;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.contact-action b { font: 400 25px/1 'DM Mono', monospace; }
+.contact-action:hover { background: transparent; color: var(--ink); transform: translateY(-4px); }
+.contact-whatsapp { background: var(--coral); border-color: var(--coral); color: #ffffff; }
+.contact-whatsapp:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
+
+.contact .contact-inner {
+  text-align: center;
+}
+
+.contact .contact-note {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .contact-actions { grid-template-columns: 1fr; }
+}
