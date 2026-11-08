@@ -1,0 +1,22 @@
+.cursor-softlight {
+  position: fixed;
+  z-index: 10;
+  width: 340px;
+  height: 340px;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, .52) 0%, rgba(255, 255, 255, .2) 32%, transparent 70%);
+  mix-blend-mode: soft-light;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity .25s ease;
+  will-change: left, top;
+}
+
+.cursor-softlight.is-visible { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  .cursor-softlight { display: none; }
+}

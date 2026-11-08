@@ -1207,11 +1207,11 @@ body.design-process-body .nav {
 @media (max-width: 700px) {
   html { scroll-padding-top: 76px; }
 
-  .nav { position: relative; height: 70px; padding-right: 66px; }
+  .nav { position: sticky; top: 0; z-index: 30; height: 70px; padding-right: 66px; }
   .nav .availability { padding: 8px 10px; font-size: 9px; }
   .mobile-menu-toggle {
-    position: absolute;
-    z-index: 17;
+    position: fixed;
+    z-index: 31;
     top: 14px;
     right: 18px;
     display: grid;
@@ -1274,6 +1274,7 @@ body.design-process-body .nav {
   .profile-details, .work { padding: 68px 0; }
   .profile-cards { gap: 16px; }
   .profile-card { min-height: 0; padding: 24px 20px; }
+  .profile-card.education i { display: none; }
   .profile-card.experience { min-height: 0; padding-bottom: 46px; }
   .experience-list ul { font-size: 11pt; }
   .experience-list section + section { margin-top: 20px; padding-top: 18px; }
@@ -1285,7 +1286,7 @@ body.design-process-body .nav {
   .work .project-filters button { min-height: 42px; padding: 8px; font-size: 10px; }
   .project-feature { padding: 34px 0; gap: 20px; }
   .project-copy h3 { margin-bottom: 12px; font-size: clamp(2rem, 10vw, 2.8rem); }
-  .project-copy > p:last-child { display: block; max-width: 34rem; font-size: 13px; }
+  .project-copy > p:last-child { display: none; }
   .project-piece, .project-showcase { aspect-ratio: 4 / 3; }
   .magazine-scroll { grid-template-columns: .3fr 1fr .3fr; gap: 10px; }
   .mug-design-pair, .pillow-designs .mug-design-pair, .photobook-designs .mug-design-pair { grid-template-columns: 1fr; gap: 16px; padding: 22px 0; }

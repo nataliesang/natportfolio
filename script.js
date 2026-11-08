@@ -10,6 +10,22 @@ const brandMockupWrap = brandMockup?.closest('.brand-mockup-pair');
 const designProcessCta = document.querySelector('.design-process-cta');
 const designProcessTeaser = document.querySelector('.design-process-teaser');
 
+const cursorLightQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+if (cursorLightQuery.matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const cursorLight = document.createElement('div');
+  cursorLight.className = 'cursor-softlight';
+  cursorLight.setAttribute('aria-hidden', 'true');
+  document.body.append(cursorLight);
+
+  window.addEventListener('pointermove', (event) => {
+    cursorLight.style.left = `${event.clientX}px`;
+    cursorLight.style.top = `${event.clientY}px`;
+    cursorLight.classList.add('is-visible');
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => cursorLight.classList.remove('is-visible'));
+}
+
 if (primaryNavigation) primaryNavigation.id = 'primary-navigation';
 
 mobileMenuToggle?.addEventListener('click', () => {
@@ -70,6 +86,17 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+const languageBarsObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-loaded');
+      languageBarsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.45 });
+
+document.querySelectorAll('.language-bars').forEach((element) => languageBarsObserver.observe(element));
 
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
